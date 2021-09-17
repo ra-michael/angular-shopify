@@ -7,8 +7,8 @@
             <mat-icon color="" [routerLink]="['']" routerLinkActive="router-link-active">home</mat-icon>
         </button>
         <button mat-icon-button>
-            <mat-icon matBadge="15" matBadgeColor="warn" matBadgeSize="small" [routerLink]="['/product-favorite']"
-                routerLinkActive="router-link-active">favorite_outline</mat-icon>
+            <mat-icon matBadge="{{ nbProductFavorite }}" matBadgeColor="warn" matBadgeSize="small"
+                [routerLink]="['/product-favorite']" routerLinkActive="router-link-active">favorite_outline</mat-icon>
         </button>
         <button mat-icon-button [routerLink]="['/cart']" routerLinkActive="router-link-active">
             <mat-icon matBadge="{{ nbProductInCart }}" matBadgeColor="warn" matBadgeSize="small">local_mall</mat-icon>

@@ -29,7 +29,11 @@
                 <h3>{{currentProduct.title}}</h3>
                 <p>{{currentProduct.description}}
                 </p>
-                <button class="btn btn-info achat w-100" [routerLink]="['/achat',currentProduct.id]">Acheter</button>
+                <button mat-raised-button class="btn-main-color w-100 text-white" *ngIf="!currentProduct.isInCart"
+                    (click)="addToCart()">Ajouter au panier</button>
+                <button mat-raised-button class="btn-main-color w-100 text-white" *ngIf="currentProduct.isInCart"
+                    [routerLink]="['/cart']">Voir votre
+                    panier</button>
             </mat-card>
         </div>
     </div>

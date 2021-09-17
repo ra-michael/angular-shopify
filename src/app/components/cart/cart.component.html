@@ -8,12 +8,14 @@
                 <p class="pt-5 mat-title text-gray">Votre panier est vide.</p>
             </div>
             <div class="col-lg-8" *ngIf="products.length != 0">
-                <div class="w-100 bg-body border p-3 mt-4">
+                <div class="bg-body border p-3 mt-4">
                     <div *ngFor="let item of products" class="row mb-2">
                         <img src={{item.img}} alt="Produit" class="col-lg-3"
                             style="height: 100px; object-fit: cover; width: 10%;">
-                        <div class="col-lg-6 d-flex align-items-center">
-                            <h2>{{item.title}}&nbsp; - &nbsp;</h2>
+                        <div class="col-lg-3 d-flex align-items-center">
+                            <h2>{{item.title}}</h2>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center justify-content-end">
                             <h2>{{item.price}} Ar</h2>
                         </div>
                     </div>
@@ -31,7 +33,7 @@
                             <td>{{res}} Ar</td>
                         </tr>
                     </table>
-                    <button class="btn btn-info payer w-100 mt-2">Payer maintenant</button>
+                    <button mat-raised-button class="btn-main-color w-100 text-white">Payer maintenant</button>
                 </div>
 
             </div>

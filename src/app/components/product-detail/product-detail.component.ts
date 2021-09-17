@@ -28,4 +28,8 @@ export class ProductDetailComponent implements OnInit {
     this.getProductById();
   }
 
+  addToCart(){
+    this.currentProduct.isInCart = true;
+  }
+
 }

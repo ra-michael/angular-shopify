@@ -11,6 +11,8 @@ export class NavbarComponent implements OnInit {
 
   nbProductInCart:number=0;
 
+  nbProductFavorite:number=0;
+
   products:Product[]= [];
 
   constructor(private data:ProductlistService) { }
@@ -18,6 +20,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.products = this.data.getAllProduct();
     this.nbProductInCart = this.products.filter(x => x.isInCart).length;
+    this.nbProductFavorite = this.products.filter(x => x.isLiked).length;
   }
 
 }
