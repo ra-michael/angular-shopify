@@ -1,0 +1,22 @@
+<div class="banner-image vh-100 d-flex justify-content-center align-items-center">
+    <div class="mask">
+    </div>
+    <div class="text-white text-center" style="z-index: 2;">
+        <h1 class="text-uppercase mat-display-3 mb-4 fw-bold" data-aos="flip-up" data-aos-duration="1500">Bienvenue !!
+        </h1>
+        <a mat-raised-button href="#product" class="mat-body text-uppercase" data-aos="zoom-in"
+            data-aos-duration="1000">Voir les produits</a>
+    </div>
+
+</div>
+<div class="container">
+    <section id="product">
+        <h2 class="text-center entete mt-5">PRODUITS</h2>
+        <div class="underline mx-auto mb-5"></div>
+        <div class="row g-3">
+            <div *ngFor="let item of products" class="col-lg-4">
+                <app-product-item [ProductId]="item.id" (updated)="updateCartBadge()"></app-product-item>
+            </div>
+        </div>
+    </section>
+</div>

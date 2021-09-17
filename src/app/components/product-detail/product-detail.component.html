@@ -1,0 +1,36 @@
+<div class="container-fluid" style="padding-top: 90px;">
+    <button mat-fab class="btn-main-color ms-4" [routerLink]="['']">
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div class="row p-4 g-2">
+        <div class="col-lg-8">
+            <mat-card class="p-1">
+                <div class="row gx-1">
+                    <img src={{currentProduct.img}} alt="" width="80%">
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-lg-4">
+            <mat-card class="details mx-auto">
+                <h2 class="text-center text-gray">{{currentProduct.price}} Ar</h2>
+                <mat-divider></mat-divider>
+                <table class="table text-gray w-100" [cellSpacing]="2" [cellPadding]="4">
+                    <tr>
+                        <td>EMPLACEMENT</td>
+                        <td>MADAGASCAR</td>
+                    </tr>
+                    <tr>
+                        <td>MODES DE PAYEMENT</td>
+                        <td>PAYPAL</td>
+                    </tr>
+                </table>
+                <mat-divider></mat-divider>
+                <br />
+                <h3>{{currentProduct.title}}</h3>
+                <p>{{currentProduct.description}}
+                </p>
+                <button class="btn btn-info achat w-100" [routerLink]="['/achat',currentProduct.id]">Acheter</button>
+            </mat-card>
+        </div>
+    </div>
+</div>

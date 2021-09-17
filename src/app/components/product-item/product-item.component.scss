@@ -1,0 +1,39 @@
+.card-wrapper {
+  position: relative;
+  max-width: 400px;
+}
+
+.to-flip {
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+mat-card-actions {
+  margin-top: -20px;
+
+  & .action-btn {
+    display: flex;
+  }
+
+  & .action-btn button:last-child {
+    margin-left: auto;
+  }
+
+  & .action-btn button:hover {
+    color: var(--main-color);
+  }
+}
+
+.reaction-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+mat-card img {
+  object-fit: cover;
+  height: 400px;
+  cursor: pointer;
+}

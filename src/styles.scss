@@ -3,5 +3,84 @@
 @import "~aos/dist/aos.css";
 @import "~material-design-icons/iconfont/material-icons.css";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+  font-family: "Billabong";
+  src: url("/assets/fonts/billabong.ttf") format("truetype");
+}
+
+:root {
+  --main-color: #07bdce;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: #ebebeb;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.text-bold {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.text-bold:hover {
+  text-decoration: underline;
+}
+
+.text-gray {
+  color: rgb(102, 102, 102);
+}
+
+.router-link-active {
+  color: var(--main-color);
+}
+
+.green-snackbar {
+  color: #155724 !important;
+  background-color: #d4edda !important;
+  border-color: #c3e6cb !important;
+  .mat-simple-snackbar-action {
+    color: #155724 !important;
+  }
+}
+
+.red-snackbar {
+  color: #571515 !important;
+  background-color: #edd4d4 !important;
+  border-color: #e6c3c3 !important;
+  .mat-simple-snackbar-action {
+    color: #571515 !important;
+  }
+}
+
+.underline {
+  height: 4px;
+  width: 4rem;
+  background-color: var(--main-color);
+  margin-top: 10px;
+}
+
+.entete {
+  font-size: 30px !important;
+  color: var(--main-color);
+}
+
+.btn-main-color {
+  background-color: var(--main-color) !important;
+}
+
+section:before {
+  height: 54px;
+  content: "";
+  display: block;
+}

@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <section>
+
+        <h2 class="text-center entete mt-5">VOTRE PANIER</h2>
+        <div class="underline mx-auto mb-5"></div>
+        <div class="row">
+            <div *ngIf="products.length == 0" class="col-lg-8 mx-auto text-center" style="margin-bottom: 100px;">
+                <p class="pt-5 mat-title text-gray">Votre panier est vide.</p>
+            </div>
+            <div class="col-lg-8" *ngIf="products.length != 0">
+                <div class="w-100 bg-body border p-3 mt-4">
+                    <div *ngFor="let item of products" class="row mb-2">
+                        <img src={{item.img}} alt="Produit" class="col-lg-3"
+                            style="height: 100px; object-fit: cover; width: 10%;">
+                        <div class="col-lg-6 d-flex align-items-center">
+                            <h2>{{item.title}}&nbsp; - &nbsp;</h2>
+                            <h2>{{item.price}} Ar</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mx-auto">
+                <div class="w-100 bg-body border p-3 mt-4 text-gray">
+                    <table class="w-100" [cellSpacing]="2" [cellPadding]="8">
+                        <tr>
+                            <td>Frais de livraison</td>
+                            <td>5 000 Ar</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{{res}} Ar</td>
+                        </tr>
+                    </table>
+                    <button class="btn btn-info payer w-100 mt-2">Payer maintenant</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>

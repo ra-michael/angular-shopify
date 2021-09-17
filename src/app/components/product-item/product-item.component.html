@@ -1,0 +1,47 @@
+<mat-card class="card-wrapper" data-aos="zoom-in" data-aos-duration="1000">
+    <mat-card-header>
+        <div mat-card-avatar style="background-image: url({{productOwner.pdp}});
+      background-size: cover;"></div>
+        <mat-card-title style="font-size: 16px;">{{ productOwner.name }}</mat-card-title>
+        <mat-card-subtitle>
+            <div class="d-flex align-items-center">
+                <mat-icon style="font-size: large;">local_offer</mat-icon>
+                <span class="mb-2 me-1">{{ currentProduct.title }} |</span>
+                <span class="mb-2 fw-bold">{{ currentProduct.price }} Ar</span>
+            </div>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="currentProduct.img" alt="Produit" [routerLink]="['/product-detail', currentProduct.id]">
+    <mat-card-actions>
+        <div class="action-btn">
+            <button mat-icon-button class="reaction-box" (click)="onLiked()" matTooltip="Like"
+                matTooltipPosition="before" matTooltipShowDelay="200" matTooltipHideDelay="200">
+                <mat-icon *ngIf="currentProduct.isLiked" color="warn">favorite</mat-icon>
+                <mat-icon *ngIf="!currentProduct.isLiked" color="">favorite_border</mat-icon>
+            </button>
+            <button mat-icon-button [routerLink]="['/product-detail', currentProduct.id]">
+                <mat-icon color="" class="to-flip">info_outline</mat-icon>
+            </button>
+            <button mat-icon-button matTooltip="Partager" matTooltipPosition="after" matTooltipShowDelay="200"
+                matTooltipHideDelay="200">
+                <mat-icon color="" class="to-flip">reply</mat-icon>
+            </button>
+            <button mat-icon-button (click)="onAddToCart()" class="bookmark" matTooltip="Ajouter aux paniers"
+                matTooltipPosition="below" matTooltipShowDelay="200" matTooltipHideDelay="200">
+                <mat-icon *ngIf="currentProduct.isInCart" color="" style="color: #07bdce;">local_mall</mat-icon>
+                <mat-icon *ngIf="!currentProduct.isInCart" color="">local_mall</mat-icon>
+            </button>
+        </div>
+        <div class="reaction-container">
+            <div mat-card-avatar style="background-image: url('/assets/images/users/male1.png');
+                                      background-size: cover; transform: scale(0.8);">
+            </div>
+            <div class="mat-caption">
+                Aimé par <span class="text-bold">mika_admin </span> et <span class="text-bold">{{
+                    currentProduct.numberOfLikes }} {{
+                    (currentProduct.numberOfLikes >
+                    1) ? "autres personnes." : "autre personne." }}</span>
+            </div>
+        </div>
+    </mat-card-actions>
+</mat-card>

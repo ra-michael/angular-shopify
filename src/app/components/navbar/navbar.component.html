@@ -1,0 +1,22 @@
+<mat-toolbar color="" class="top-nav">
+    <div class="title">
+        Shopify
+    </div>
+    <div>
+        <button mat-icon-button>
+            <mat-icon color="" [routerLink]="['']" routerLinkActive="router-link-active">home</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon matBadge="15" matBadgeColor="warn" matBadgeSize="small" [routerLink]="['/product-favorite']"
+                routerLinkActive="router-link-active">favorite_outline</mat-icon>
+        </button>
+        <button mat-icon-button [routerLink]="['/cart']" routerLinkActive="router-link-active">
+            <mat-icon matBadge="{{ nbProductInCart }}" matBadgeColor="warn" matBadgeSize="small">local_mall</mat-icon>
+        </button>
+        <button mat-icon-button mat-card-avatar
+            style="background-image: url('/assets/images/users/Mika.jpg'); background-size: cover; transform: scale(0.7); padding-top: 10px; margin-left: 4px;"
+            matTooltip="RASOLOARISON Ambinintsoa Michaël IMTICIA 5" matTooltipPosition="below" matTooltipShowDelay="100"
+            matTooltipHideDelay="200">
+        </button>
+    </div>
+</mat-toolbar>

@@ -1,0 +1,16 @@
+<div class="container">
+    <section>
+        <h2 class="text-center entete mt-5">PRODUITS FAVORIS</h2>
+        <div class="underline mx-auto mb-5"></div>
+        <div class="row">
+            <div *ngIf="products_show.length == 0" class="col-lg-4 mx-auto text-center" style="margin-bottom: 100px;">
+                <p class="pt-5 mat-title text-gray">Pas encore de favori.</p>
+            </div>
+            <div *ngIf="products_show.length != 0" class="row">
+                <div *ngFor="let item of products_show" class="col-lg-4">
+                    <app-product-item [ProductId]="item.id" (updated)="updateCartBadge()"></app-product-item>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
