@@ -4,7 +4,7 @@
         <h2 class="text-center entete mt-5">VOTRE PANIER</h2>
         <div class="underline mx-auto mb-5"></div>
         <div class="row">
-            <div *ngIf="products.length == 0" class="col-lg-8 mx-auto text-center" style="margin-bottom: 100px;">
+            <div *ngIf="products.length == 0" class="col-lg-12 mx-auto text-center" style="margin-bottom: 100px;">
                 <p class="pt-5 mat-title text-gray">Votre panier est vide.</p>
             </div>
             <div class="col-lg-8" *ngIf="products.length != 0">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 mx-auto">
+            <div class="col-lg-4 mx-auto" *ngIf="products.length != 0">
                 <div class="w-100 bg-body border p-3 mt-4 text-gray">
                     <table class="w-100" [cellSpacing]="2" [cellPadding]="8">
                         <tr>
